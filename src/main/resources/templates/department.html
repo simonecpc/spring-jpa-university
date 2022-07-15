@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>	
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace="fragments :: risorse-head"></th:block>
+		<title>Departments</title>
+	</head>
+	<body>
+		   <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <img src="/img/gigigi.jpg" alt="" width="30" height="24">
+            <a class="navbar-brand" href="#"><b>Università Ti Aspecto</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Departments</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+		<table>
+			<thead>
+				<tr>
+					<th>name</th>
+					<th>address</th>
+					<th>phone</th>
+					<th>email</th>
+					<th>website</th>
+					<th>head of department</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dep : ${departmentList}">
+					<td th:text="${dep.getName()}"></td>
+					<td th:text="${dep.address}"></td>
+					<td th:text="${dep.phone}"></td>
+					<td th:text="${dep.email}"></td>
+					<td th:text="${dep.website}"></td>
+					<td th:text="${dep.headOfDepartment}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html> 
+
