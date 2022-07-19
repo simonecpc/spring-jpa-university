@@ -23,7 +23,7 @@ public class DepartmentController {
 		return "home";
 	} 
 	
-	@GetMapping("/department")
+	@GetMapping("/departments")
 	public String department(Model model) {
 		
 		List<Department> departmentList = (List<Department>) repo.findAll();

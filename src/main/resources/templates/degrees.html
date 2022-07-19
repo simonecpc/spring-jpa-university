@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<th:block th:replace="fragments :: risorse-head"></th:block>
+		<title>Departments</title>
+	</head>
+	<body>
+		<th:block th:replace="fragments :: navbar(degrees)"></th:block>
+		
+		<div>
+	        <table class="table my-3">
+	          <thead>
+	            <tr class="text-center">
+	              <th>Nome</th>
+	              <th>Tipologia</th>
+	              <th>Indirizzo</th>
+	              <th>Dipartimento</th>
+	              <th>E-Mail</th>
+	              <th>Sito Web</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr th:each="d : ${DegreesList}">
+	              <td th:text="${d.name}"></td>
+	              <td th:text="${d.level}"></td>
+	              <td th:text="${d.address}"></td>
+	              <td th:text="${d.getDepartments.name}"></td>
+	              <td th:text="${d.email}"></td>
+	              <td th:text="${d.website}"></td>
+	            </tr>
+	          </tbody>
+	        </table>
+	   </div>
+	</body>
+</html> 

@@ -8,5 +8,37 @@
   	<th:block>
   </head>
   <body>
+  <nav th:fragment="navbar(current)" class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          
+          <div class="row align-items-center">
+        	
+        	<div class="col-1">
+	          <a class="navbar-brand" href="/">
+	   			<img class="w-100"src="/img/gigigi.jpg" alt="Logo">
+	          </a>
+          	</div>
+          	
+
+            <div class="col-11">
+	            <ul class="navbar-nav text-uppercase">
+		          <li class="nav-item"><b>Università ti Aspecto</b></li>
+		          <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'home'} ? active : not-active" href="/">Home</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'departments'} ? active : not-active" href="/departments">Dipartimenti</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'degrees'} ? active : not-active" href="/degrees">Corsi di Laurea</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" th:classAppend="${current == 'teachers'} ? active : not-active" href="/teachers">Insegnanti</a>
+	              </li>
+	            </ul>
+            </div>
+          </div>
+        </div>		
+	</nav>
   </body>
 </html>
